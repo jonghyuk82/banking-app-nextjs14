@@ -40,3 +40,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Next.js
 - React
 - Tailwind
+- shadcn ui
+
+# Installed Packages
+
+- chart.js (react-chartjs-2)
+- react-countup
