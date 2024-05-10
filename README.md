@@ -42,7 +42,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Tailwind
 - shadcn ui
 
-# Installed Packages
+## Installed Packages
 
 - chart.js (react-chartjs-2)
 - react-countup
+- React Hook Form from shadcn ui
+- zod validation
