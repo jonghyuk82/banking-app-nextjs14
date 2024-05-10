@@ -24,6 +24,8 @@ import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { signUp } from "@/lib/actions/user.action";
 
+import { toast } from "react-hot-toast";
+
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
   const [user, setUser] = useState(null);
@@ -64,6 +66,12 @@ const AuthForm = ({ type }: { type: string }) => {
       }
     } catch (error) {
       console.log(error);
+
+      {
+        type === "sign-in"
+          ? toast.error("Invalid credential")
+          : toast.error("Something went wrong");
+      }
     } finally {
       setIsLoading(false);
     }
