@@ -22,7 +22,7 @@ import CustomInput from "./CustomInput";
 import { authformSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { signUp } from "@/lib/actions/user.action";
+import { getLoggedInUser, signIn, signUp } from "@/lib/actions/user.action";
 
 import { toast } from "react-hot-toast";
 
@@ -55,6 +55,7 @@ const AuthForm = ({ type }: { type: string }) => {
       if (type === "sign-up") {
         const newUser = await signUp(data);
         setUser(newUser);
+        toast.success("Successfully signed up");
       }
 
       if (type === "sign-in") {
@@ -63,6 +64,7 @@ const AuthForm = ({ type }: { type: string }) => {
           password: data.password,
         });
         if (response) router.push("/");
+        toast.error(`Successfully signed in as ${data.email}`);
       }
     } catch (error) {
       console.log(error);
